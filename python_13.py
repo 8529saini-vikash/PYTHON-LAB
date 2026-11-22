@@ -22,6 +22,9 @@ class BankAccount:
     def get_balance(self):
         return self.__balance
 
+    def _set_balance(self, amount):
+        self.__balance = amount
+
     def display_details(self):
         print("Account Holder:", self.account_holder)
         print("Current Balance:", self.get_balance())
@@ -50,7 +53,7 @@ class CurrentAccount(BankAccount):
             print("Overdraft limit exceeded.")
         else:
             new_balance = self.get_balance() - amount
-            self._BankAccount__balance = new_balance
+            self._set_balance(new_balance)
             print("Withdrawal successful.")
 
 
